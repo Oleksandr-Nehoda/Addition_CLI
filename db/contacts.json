@@ -36,27 +36,15 @@
     "phone": "(186) 568-3720"
   },
   {
-    "id": "7",
-    "name": "Reuben Henry",
-    "email": "pharetra.ut@dictum.co.uk",
-    "phone": "(715) 598-5792"
-  },
-  {
-    "id": "8",
-    "name": "Simon Morton",
-    "email": "dui.Fusce.diam@Donec.com",
-    "phone": "(233) 738-2360"
-  },
-  {
-    "id": "9",
-    "name": "Thomas Lucas",
-    "email": "nec@Nulla.com",
-    "phone": "(704) 398-7993"
-  },
-  {
     "id": "dad0a39c-498c-4566-bf7c-44cbc6dcc5da",
     "name": "Oleksandr Nehoda",
     "email": "qwe@qwe",
     "phone": "123123"
+  },
+  {
+    "id": "7a290381-9993-4a31-9c06-5fb90faa9342",
+    "name": "Santa",
+    "email": "snow@snow",
+    "phone": "123456"
   }
 ]

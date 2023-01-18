@@ -18,9 +18,9 @@ async function getContactById(contactId) {
   try {
     const contacts = await listContacts();
     const contactById = contacts.find(contact => contact.id === String(contactId));
-    // if (!contactById) {
-    //   return null;
-    // }
+    if(!contactById) {
+        return `Not found this id: ${contactId}`
+    }
     return contactById;
   } catch (err) {
     console.error(`This is catch error: ${err}`);
@@ -30,10 +30,15 @@ async function getContactById(contactId) {
 async function removeContact(contactId) {
   try {
     const contacts = await listContacts();
+    const findId = contacts.find(contact => contact.id === String(contactId));
+    if(!findId) {
+        return `Not found this id: ${contactId}`
+    }
     const updatedContacts = contacts.filter(contact => contact.id !== String(contactId));
-    // console.log(`UpContacts ${updatedContacts}`);
     const updatedContactsJson = JSON.stringify(updatedContacts);
-    await fs.writeFile(contactsPath, updatedContactsJson) 
+    await fs.writeFile(contactsPath, updatedContactsJson)
+    const listCont = JSON.parse(updatedContactsJson)
+    return  listCont;
   } catch (err) {
     console.error(`This is catch error: ${err}`);
   }
@@ -49,8 +54,12 @@ try {
       phone
     };
     contacts.push(newContact);
+
     const updatedContactsJson = JSON.stringify(contacts);
+    const listCont = JSON.parse(updatedContactsJson);
     await fs.writeFile(contactsPath, updatedContactsJson); 
+
+    return listCont;
 } catch (err) {
     console.error(`This is catch error: ${err}`);
 }
